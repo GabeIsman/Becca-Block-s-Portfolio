@@ -1,5 +1,8 @@
 %p#notice= notice
 
+= image_tag @design.image.image.url
+- @design.details.each do |img|
+  = image_tag img.image.url
 
 = link_to 'Edit', edit_design_path(@design)
 \|

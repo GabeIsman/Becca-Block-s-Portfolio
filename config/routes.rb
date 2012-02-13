@@ -1,4 +1,8 @@
 Becca::Application.routes.draw do
+  resources :art
+
+  resources :arts
+
   resources :pages
 
   resources :designs

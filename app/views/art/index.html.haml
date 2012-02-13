@@ -1,0 +1,17 @@
+%h1 Listing art
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @art.each do |art|
+    %tr
+      %td= link_to 'Show', art
+      %td= link_to 'Edit', edit_art_path(art)
+      %td= link_to 'Destroy', art, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Art', new_art_path

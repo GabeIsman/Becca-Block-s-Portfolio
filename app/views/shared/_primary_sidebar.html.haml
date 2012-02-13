@@ -1,5 +1,5 @@
 %nav#primary-sidebar-wrapper
   %ul#primary-sidebar
-    %li Design
-    %li Art
-    %li About
+    %li= link_to "Design", :controller => "designs", :action => "index"
+    %li= link_to "Art", :controller => "art", :action => "index"
+    %li= link_to "About", :controller => "pages", :action => "about"

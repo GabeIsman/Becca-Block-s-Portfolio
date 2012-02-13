@@ -1,0 +1,16 @@
+<!doctype html>
+%html
+  %head
+    %title Becca Kahn Bloch
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  
+  %body
+    #page-wrapper
+      #page
+      
+        #primary-header-wrapper
+          %header#primary-header
+            = render :partial => "shared/primary_header"
+        = yield

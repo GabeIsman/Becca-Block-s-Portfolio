@@ -1,4 +1,6 @@
 class DesignsController < ApplicationController
+
+  before_filter :require_login, :except => [:index, :show]
   # GET /designs
   # GET /designs.json
   def index

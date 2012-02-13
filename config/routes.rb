@@ -1,7 +1,12 @@
 Becca::Application.routes.draw do
+<<<<<<< HEAD
   resources :art
 
   resources :arts
+=======
+
+  resources :users
+>>>>>>> 0c15a00acf4a284f63f23d147a83e43a767fdb23
 
   resources :pages
 
@@ -10,6 +15,9 @@ Becca::Application.routes.draw do
 
   root :to => "pages#home"
   match "about" => "pages#about"
+  match "log_in" => "sessions#new"
+  match "log_out" => "sessions#destroy"
+  post "sessions/create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,9 +1,10 @@
-%h1 Listing pages
+%header#main-area-header
+  %hgroup
+    %h1 Listing pages
 
 %table
   %tr
     %th Title
-    %th Content
     %th
     %th
     %th
@@ -11,11 +12,11 @@
   - @pages.each do |page|
     %tr
       %td= page.title
-      %td= raw page.content
       %td= link_to 'Show', page
       %td= link_to 'Edit', edit_page_path(page)
       %td= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Page', new_page_path
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'New Page', new_page_path

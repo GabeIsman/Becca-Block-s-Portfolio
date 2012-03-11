@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  lis = $('#main-area-footer nav ul').children('li')
+  li_widths = (lis.width() + 20) * lis.length
+  $('#main-area-footer nav ul').css(
+    'width', li_widths
+  )

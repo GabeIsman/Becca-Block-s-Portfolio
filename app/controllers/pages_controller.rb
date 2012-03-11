@@ -1,5 +1,17 @@
 class PagesController < ApplicationController
 
+  
+  def clean_content( content )
+    content = "<p>" + content + "</p>"
+    while content.index( "\n" )
+      index = content.index( "\n" )
+      content[index] = "</p><p>"
+    end
+    return content
+  end
+    
+
+
   #before_filter :require_login, :except => [:index, :show]
   # GET /pages
   # GET /pages.json
@@ -16,6 +28,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
+    @page.content = clean_content( @page.content )
 
     respond_to do |format|
       format.html # show.html.erb
@@ -83,17 +96,9 @@ class PagesController < ApplicationController
     end
   end
 
-  def home
-    @page = Page.find_or_create_by_id(:id => 1)
-
-    respond_to do |format|
-      format.html { render 'show' }
-      format.json { render json: @page }
-    end
-  end
-
   def about
-    @page = Page.find_or_create_by_id(:id => 2)
+    @page = Page.find_or_create_by_id(:id => 1)
+    @page.content = clean_content( @page.content ) if @page.content
 
     respond_to do |format|
       format.html { render 'show' }

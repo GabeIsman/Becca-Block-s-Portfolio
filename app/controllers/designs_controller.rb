@@ -27,7 +27,8 @@ class DesignsController < ApplicationController
   # GET /designs/new.json
   def new
     @design = Design.new
-    @image = Image.new
+    @design.build_image
+    @design.details.build
 
     respond_to do |format|
       format.html # new.html.erb

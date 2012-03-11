@@ -1,5 +1,10 @@
-%h1 New design
+%header#main-area-header
+  %hgroup
+    %h1 New Design
 
 = render 'form'
 
-= link_to 'Back', designs_path
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'Back', designs_path

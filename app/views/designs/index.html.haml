@@ -1,17 +1,17 @@
-%h1 Listing designs
+%header#main-area-header
+  %hgroup
+    %h1 Design
 
-%table
-  %tr
-    %th
-    %th
-    %th
-
+%ul#designs
   - @designs.each do |design|
-    %tr
-      %td= link_to 'Show', design
-      %td= link_to 'Edit', edit_design_path(design)
-      %td= link_to 'Destroy', design, :confirm => 'Are you sure?', :method => :delete
+    %li
+      %ul.show-edit-destroy
+        %li= link_to 'Show', design
+        %li= link_to 'Edit', edit_design_path( design )
+        %li= link_to 'Destroy', design, :confirm => 'Are you sure?', :method => :delete
 
-%br
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'New Design', new_design_path
 
-= link_to 'New Design', new_design_path

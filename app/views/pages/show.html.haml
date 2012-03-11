@@ -1,9 +1,13 @@
 %p#notice= notice
 
-%h1
-  = @page.title
+%header#main-area-header
+  %hgroup
+    %h1= @page.title unless @page.title == "About"
 .content
-  = @page.content
+  = raw @page.content
 
-= link_to 'Edit', edit_page_path(@page) if @active_user
-\|
+- if @active_user
+  %footer#main-area-footer
+    %nav#bottom-nav
+      %ul#bottom-menu
+        %li.main_area_footer_li= link_to 'Edit', edit_page_path(@page)

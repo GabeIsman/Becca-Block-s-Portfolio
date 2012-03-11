@@ -1,7 +1,11 @@
-%h1 Editing art
+%header#main-area-header
+  %hgroup
+    %h1 Editing Art
 
 = render 'form'
 
-= link_to 'Show', @art
-\|
-= link_to 'Back', art_index_path
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'Show', @art
+      %li.main_area_footer_li= link_to 'Back', art_index_path

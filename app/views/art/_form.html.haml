@@ -6,5 +6,22 @@
         - @art.errors.full_messages.each do |msg|
           %li= msg
 
-  .actions
-    = f.submit 'Save'
+  %table
+    %tr
+      %th= f.label :main_image
+      %td
+        = f.fields_for :image do |image_fields|
+          = image_fields.file_field :image
+    %tr
+      %th= f.label :details
+      %td
+        = f.fields_for :details do |details_fields|
+          = details_fields.file_field :image
+    %tr
+      %th= f.label :details
+      %td
+        = f.fields_for :details do |details_fields|
+          = details_fields.file_field :image
+    %tr
+      %th
+      %td.submit= f.submit 'Save'

@@ -13,10 +13,51 @@ img.front-page
   opacity: .9
   width: 48px
   
+$main_area_width: 750px
 #main-area-wrapper
-  margin: 100px auto
-  width: 700px
+  background-color: rgba(255,255,255,.75)
+  border: 1px solid black
+  //box-shadow: 0px 0px 10px
+  margin: 25px auto
+  width: $main_area_width
   height: 600px
+  section#main-area
+    
+    $main_area_header_height: 50px
+    header#main-area-header
+      height: $main_area_header_height
+      hgroup
+        h1
+          color: black
+          line-height: $main_area_header_height
+          text-align: center
+    
+    $main_area_footer_height: 25px
+    footer#main-area-footer
+      position: absolute
+      bottom: 0
+      left: 0
+      width: $main_area_width
+      height: $main_area_footer_height
+      nav
+        height: $main_area_footer_height
+        position: relative
+        ul
+          height: $main_area_footer_height
+          margin: 0 auto
+          li.main_area_footer_li
+            float: left
+            font-family: "Gill Sans"
+            font-weight: 300
+            line-height: $main_area_footer_height - 10px
+            margin: 0 5px
+            padding: 5px
+            text-align: center
+            text-transform: uppercase
+            width: 100px
+            
+    
+          
     
     
   

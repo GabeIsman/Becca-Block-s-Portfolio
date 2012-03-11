@@ -5,7 +5,7 @@ Becca::Application.routes.draw do
   resources :images
   resources :users
 
-  root :to => "pages#home"
+  root :to => "pages#about"
   match "about" => "pages#about"
   match "log_in" => "sessions#new"
   match "log_out" => "sessions#destroy"

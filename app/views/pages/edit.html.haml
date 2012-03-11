@@ -1,7 +1,11 @@
-%h1 Editing page
+%header#main-area-header
+  %hgroup
+    %h1 Editing page
 
 = render 'form'
 
-= link_to 'Show', @page
-\|
-= link_to 'Back', pages_path
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'Show', @page
+      %li.main_area_footer_li= link_to 'Back', pages_path

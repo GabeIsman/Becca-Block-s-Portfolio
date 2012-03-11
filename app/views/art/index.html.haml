@@ -1,17 +1,16 @@
-%h1 Listing art
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
+%header#main-area-header
+  %hgroup
+    %h1 Art
+    
+%ul#designs
   - @art.each do |art|
-    %tr
-      %td= link_to 'Show', art
-      %td= link_to 'Edit', edit_art_path(art)
-      %td= link_to 'Destroy', art, :confirm => 'Are you sure?', :method => :delete
+    %li
+      %ul.show-edit-destroy
+        %li= link_to 'Show', art
+        %li= link_to 'Edit', edit_art_path( art )
+        %li= link_to 'Destroy', art, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Art', new_art_path
+%footer#main-area-footer
+  %nav#bottom-nav
+    %ul#bottom-menu
+      %li.main_area_footer_li= link_to 'New Art', new_art_path

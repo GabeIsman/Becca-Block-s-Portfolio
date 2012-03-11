@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @active_user = User.authenticate( params[:name], params[:password] )
     if @active_user.nil?
       flash[:error] = "Incorrect user name or password"
-      return redirect_to "new"
+      return redirect_to :controller => :sessions, :action => :new
     end
     session[:id] = @active_user.id
     flash[:notice] = "Successfully logged in"
